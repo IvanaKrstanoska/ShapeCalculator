@@ -122,15 +122,16 @@ namespace ShapeCalculator
         static void Main(string[] args)
         {
             List<IShape> shapes = new List<IShape>();
-            shapes.Add(new Triangle(1, 1, (int)ShapeMood.Normal));
-            shapes.Add(new Square(1, (int)ShapeMood.Normal));
-            shapes.Add(new Circle(1, (int)ShapeMood.Normal));
-            shapes.Add(new Circle(2, (int)ShapeMood.Normal));
+            shapes.Add(new Triangle(3, 4, (int)ShapeMood.Normal));
+            shapes.Add(new Square(2, (int)ShapeMood.Normal));
+            shapes.Add(new Circle(5.6, (int)ShapeMood.Normal));
+            shapes.Add(new Circle(2, (int)ShapeMood.SupperHappy));
+            shapes.Add(new Square(5, (int)ShapeMood.Happy));
             ShapeCalculator calculator = new ShapeCalculator();
             double totalArea = calculator.CalculateTotalArea(shapes);
             int totalCorners = calculator.CalculateTotalCorners(shapes);
-            Console.WriteLine($"Total area of shapes is {totalArea}");
-            Console.WriteLine($"Total corners of shapes is {totalCorners}");
+            Console.WriteLine($"Total area of the shapes is {totalArea}");
+            Console.WriteLine($"Total corners of the shapes is {totalCorners}");
 
         }
     }
