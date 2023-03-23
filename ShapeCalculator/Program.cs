@@ -22,11 +22,11 @@ namespace ShapeCalculator
         public double Height { get; set; }
         public int Mood { get; set; }
 
-        public Triangle(double triangleBase, double height, int mood)
+        public Triangle(double triangleBase, double height, ShapeMood mood)
         {
             Base = triangleBase;
             Height = height;
-            Mood = mood;
+            Mood = (int)mood;
         }
 
         public double CalculateArea()
@@ -46,10 +46,10 @@ namespace ShapeCalculator
         public double Side { get; set; }
         public int Mood { get; set; }
 
-        public Square(double side, int mood)
+        public Square(double side, ShapeMood mood)
         {
             Side = side;
-            Mood = mood;
+            Mood = (int)mood;
         }
 
         public double CalculateArea()
@@ -67,10 +67,10 @@ namespace ShapeCalculator
     {
         public double Radius { get; set; }
         public int Mood { get; set; }
-        public Circle(double radius, int mood)
+        public Circle(double radius, ShapeMood mood)
         {
             Radius = radius;
-            Mood = mood;
+            Mood = (int)mood;
         }
 
         public double CalculateArea()
@@ -122,11 +122,11 @@ namespace ShapeCalculator
         static void Main(string[] args)
         {
             List<IShape> shapes = new List<IShape>();
-            shapes.Add(new Triangle(3, 4, (int)ShapeMood.Normal));
-            shapes.Add(new Square(2, (int)ShapeMood.Normal));
-            shapes.Add(new Circle(5.6, (int)ShapeMood.Normal));
-            shapes.Add(new Circle(2, (int)ShapeMood.SupperHappy));
-            shapes.Add(new Square(5, (int)ShapeMood.Happy));
+            shapes.Add(new Triangle(3, 4, ShapeMood.Normal));
+            shapes.Add(new Square(2, ShapeMood.Normal));
+            shapes.Add(new Circle(5.6, ShapeMood.Normal));
+            shapes.Add(new Circle(2, ShapeMood.SupperHappy));
+            shapes.Add(new Square(5, ShapeMood.Happy));
             ShapeCalculator calculator = new ShapeCalculator();
             double totalArea = calculator.CalculateTotalArea(shapes);
             int totalCorners = calculator.CalculateTotalCorners(shapes);
